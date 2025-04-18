@@ -1,9 +1,5 @@
 package pl.kurs.zad2.model;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
 public abstract class Person {
     private int id;
     private String lastName;

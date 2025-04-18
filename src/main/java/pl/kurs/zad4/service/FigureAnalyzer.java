@@ -1,6 +1,5 @@
 package pl.kurs.zad4.service;
 
-import pl.kurs.zad3.model.Person;
 import pl.kurs.zad4.model.Figure;
 
 import java.io.*;
