@@ -72,11 +72,13 @@ public class AppointmentAnalyzer implements DataReader {
             while ((line = br.readLine()) != null) {
                 String[] values = line.split("\t");
                 if (doctors.containsKey(Integer.parseInt(values[0])) && patients.containsKey(Integer.parseInt(values[1]))) {
-                    appointments.add(new Appointment(
+                    Appointment appointment = new Appointment(
                             doctors.get(Integer.parseInt(values[0])),
                             patients.get(Integer.parseInt(values[1])),
-                            values[2])
-                    );
+                            values[2]);
+                    appointments.add(appointment);
+                    doctors.get(Integer.parseInt(values[0])).addAppointment(appointment);
+                    patients.get(Integer.parseInt(values[1])).addAppointment(appointment);
                 }
             }
         } catch (IOException e) {

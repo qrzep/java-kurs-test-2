@@ -21,6 +21,8 @@ public class Runner {
 
         FigureAnalyzer.writeFigureListToFile(figury, "zadania/figury.dupa");
         List<Figure> figuryPlik = FigureAnalyzer.readFigureListFromFile("zadania/figury.dupa");
+        Square square = new Square(10);
+        Figure square1 = new Square(10);
 
     }
 }

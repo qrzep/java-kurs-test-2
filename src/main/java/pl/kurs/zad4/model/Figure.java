@@ -5,10 +5,9 @@ import java.io.Serializable;
 public abstract class Figure implements Serializable {
     private static final long serialVersionUID = 1L;
     private static int counter = 0;
-    private final int id;
+    private int id = 0;
 
     protected Figure() {
-        id = 0;
     }
 
     protected Figure(int id) {

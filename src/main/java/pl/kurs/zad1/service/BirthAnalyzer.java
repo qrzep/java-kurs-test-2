@@ -77,10 +77,12 @@ public class BirthAnalyzer implements DataReader {
     }
 
     private Child getHighestChildByGender(Gender gender) {
-        Child highestChild = children.get(0);
+        Child highestChild = null;
         for (Child child : children) {
-            if (child.getHeightInCm() > highestChild.getHeightInCm() && child.getGender().equals(gender)) {
-                highestChild = child;
+            if (child.getGender().equals(gender)) {
+                if (highestChild == null || child.getHeightInCm() > highestChild.getHeightInCm()) {
+                    highestChild = child;
+                }
             }
         }
         return highestChild;

@@ -7,7 +7,6 @@ public class Circle extends Figure {
     private final double r;
 
     public Circle(double r){
-        super();
         this.r = r;
     }
 

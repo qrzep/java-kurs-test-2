@@ -7,7 +7,6 @@ public class Rectangle extends Figure {
     private final int a, b;
 
     public Rectangle(int a, int b) {
-        super();
         this.a = a;
         this.b = b;
     }

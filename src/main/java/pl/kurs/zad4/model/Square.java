@@ -7,7 +7,6 @@ public class Square extends Figure {
     private final int a;
 
     public Square(int a) {
-        super();
         this.a = a;
     }
 
