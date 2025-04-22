@@ -1,34 +1,47 @@
 package pl.kurs.zad4.model;
 
 import java.io.Serializable;
+import java.util.function.Supplier;
 
 public abstract class Figure implements Serializable {
     private static final long serialVersionUID = 1L;
-    private static int counter = 0;
-    private int id = 0;
+    private int instanceCounter;
+    private static int globalCounter = 0;
 
     protected Figure() {
-    }
-
-    protected Figure(int id) {
-        this.id = id;
+        this.instanceCounter = 0;
     }
 
     public static Figure createSquare(int a) {
-        return new Square(++counter, a);
+        Figure square = new Square(a);
+        square.incrementGlobalCounter();
+        return square;
     }
 
     public static Figure createCircle(double r) {
-        return new Circle(++counter, r);
+        Figure circle = new Circle(r);
+        circle.incrementGlobalCounter();
+        return circle;
     }
 
     public static Figure createRectangle(int a, int b) {
-        return new Rectangle(++counter, a, b);
+        Figure rectangle = new Rectangle(a, b);
+        rectangle.incrementGlobalCounter();
+        return rectangle;
+    }
+    private void incrementGlobalCounter() {
+        globalCounter++;
+        this.instanceCounter = globalCounter;
+
+    }
+
+    private int getInstanceCounter() {
+        return this.instanceCounter;
     }
 
     @Override
     public String toString() {
-        return "Figura nr " + id + ": " + getDescription();
+        return "Figura nr " + getInstanceCounter() + ": " + getDescription();
     }
 
     protected abstract String getDescription();

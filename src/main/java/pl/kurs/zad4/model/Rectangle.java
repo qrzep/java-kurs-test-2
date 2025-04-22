@@ -7,12 +7,7 @@ public class Rectangle extends Figure {
     private final int a, b;
 
     public Rectangle(int a, int b) {
-        this.a = a;
-        this.b = b;
-    }
-
-    protected Rectangle(int id, int a, int b) {
-        super(id);
+        super();
         this.a = a;
         this.b = b;
     }

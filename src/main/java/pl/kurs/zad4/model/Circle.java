@@ -7,11 +7,7 @@ public class Circle extends Figure {
     private final double r;
 
     public Circle(double r){
-        this.r = r;
-    }
-
-    protected Circle(int id, double r) {
-        super(id);
+        super();
         this.r = r;
     }
 

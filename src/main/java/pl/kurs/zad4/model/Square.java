@@ -7,12 +7,7 @@ public class Square extends Figure {
     private final int a;
 
     public Square(int a) {
-        this.a = a;
-    }
-
-    protected Square(int id, int a)
-    {
-        super(id);
+        super();
         this.a = a;
     }
 
